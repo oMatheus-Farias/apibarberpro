@@ -8,6 +8,7 @@ import { DetailUserController } from './controllers/user/DetailUserController';
 import { UpdateUserController } from './controllers/user/UpdateUserController';
 
 import { CreateHaircutController } from './controllers/haircut/CreateHaircutController';
+import { ListHaircutsController } from './controllers/haircut/ListHaircutsController';
 
 import { isAuthenticated } from './middlewares/isAuthenticared';
 
@@ -17,5 +18,6 @@ router.get('/me', isAuthenticated, new DetailUserController().handle);
 router.put('/users', isAuthenticated, new UpdateUserController().handle);
 
 router.post('/haircut', isAuthenticated, new CreateHaircutController().handle);
+router.get('/haircuts', isAuthenticated, new ListHaircutsController().hanlde);
 
 export { router };
